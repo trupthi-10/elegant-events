@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | Elegant Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Elegant Events</h1>
+    <p>Admin Dashboard</p>
+</header>
+
+<main>
+    <h2>Booked Events</h2>
+
+    {% if data|length == 0 %}
+        <p>No bookings yet.</p>
+    {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Event Type</th>
+                    <th>Event Date</th>
+                    <th>Guests</th>
+                    <th>Estimated Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in data %}
+                <tr>
+                    <td>{{ b.name }}</td>
+                    <td>{{ b.email }}</td>
+                    <td>{{ b.event_type }}</td>
+                    <td>{{ b.event_date }}</td>
+                    <td>{{ b.guests }}</td>
+                    <td>₹ {{ b.cost }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</main>
+
+<footer>
+    <p>© 2025 Elegant Events | Admin Panel</p>
+</footer>
+
+</body>
+</html>

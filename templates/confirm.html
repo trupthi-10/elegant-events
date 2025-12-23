@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Booking | Elegant Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* RESET & BODY */
+        * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+        body { background: #f9f9f9; color: #333; display:flex; flex-direction:column; min-height:100vh; }
+
+        header {
+            background: #e91e63;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        header h1 { font-size: 36px; margin-bottom: 10px; }
+        header p { font-size: 18px; }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        main h2 { font-size: 28px; color: #e91e63; margin-bottom: 20px; text-align:center; }
+        main p { font-size: 20px; margin-bottom: 30px; text-align:center; }
+        main p span { font-weight:bold; font-size: 24px; }
+
+        button {
+            background: #e91e63;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #d81b60; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f4f4f4;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            header h1 { font-size: 28px; }
+            header p { font-size: 16px; }
+            main h2 { font-size: 24px; }
+            main p { font-size: 18px; }
+            button { font-size: 16px; padding: 12px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Elegant Events</h1>
+    <p>Booking Confirmation</p>
+</header>
+
+<main>
+    <h2>Estimated Cost</h2>
+    <p>₹ <span>{{ cost }}</span></p>
+
+    <p>Please confirm to complete your booking.</p>
+
+    <form method="POST" action="/confirm">
+        <button type="submit">Confirm Booking</button>
+    </form>
+</main>
+
+<footer>
+    <p>© 2025 Elegant Events</p>
+</footer>
+
+</body>
+</html>

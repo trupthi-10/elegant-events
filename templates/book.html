@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Event</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    /* RESET & BODY */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background: #f9f9f9; color: #333; display:flex; justify-content:center; align-items:center; min-height:100vh; padding:20px; }
+
+    /* FORM CONTAINER */
+    form { 
+        background: #fff; 
+        padding: 40px; 
+        border-radius: 15px; 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+        width: 100%; 
+        max-width: 500px; 
+        text-align: center;
+    }
+
+    h2 { text-align:center; color:#e91e63; margin-bottom:30px; }
+
+    input, button {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    input:focus {
+        border-color: #e91e63;
+        outline: none;
+    }
+
+    button {
+        background: #e91e63;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #d81b60;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 500px) {
+        form { padding: 30px 20px; }
+        h2 { font-size: 24px; }
+        input, button { font-size: 14px; padding: 12px; }
+    }
+</style>
+</head>
+<body>
+
+<form method="POST">
+<h2>Book Your Event</h2>
+<input name="name" placeholder="Your Name" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="event_type" placeholder="Event Type" required>
+<input type="date" name="event_date" required>
+<input type="number" name="guests" placeholder="Number of Guests" required>
+<button>Calculate Cost</button>
+</form>
+
+</body>
+</html>
